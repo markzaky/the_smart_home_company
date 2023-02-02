@@ -4,60 +4,114 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <title>The Smart Home Company</title>
+    <link href='https://fonts.googleapis.com/css?family=Dosis' rel='stylesheet'>
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-    <section id="landing_page">
-        <nav style=" display: flex; flex-direction: row; align-items: flex-end; align-items: center; ">
-            <div>
-                <img id="logo" src="./images/logo_nobg.png" alt="smarthome company Logo">
-            </div>
-            <div style="width:60%">
-                <h2>The Smart Home Company</h2>
-                <span>making your House inteligent</span>
-            </div>
-            <div style="width: 40%; align-items: flex-start;" id="desktop_nav">
-                <a href="#about"><button class="buttons">About</button></a>
-                <a href="#services"><button class="buttons">Services</button></a>
-                <a href="#Projects"><button class="buttons">Projects</button></a>
-            </div>
-        </nav>
+    <header>
+        <div class="container">
+            <nav class="nav-bar">
+                <a href="#" class="nav-bar-branding"><img id="logo" src="./images/logo_nobg.png" alt="smarthome company Logo"></a>
+                <ul class="nav-menu">
+                    <li class="nav-item" ><a href="#landing" class="nav-link">Home</a></li>
+                    <li class="nav-item" ><a href="#about" class="nav-link">About</a></li>
+                    <li class="nav-item" ><a href="#services" class="nav-link">Services</a></li>
+                </ul>
+                <div class="humberger">
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <section id="landing">
         <div id="call_to_action">
             <div id="landing_action">
-                <p>Are you looking to automate your home? 
+                <h2>There is no place like a Smart Home</h2>
+                <p style="color: white; font-size: 19px;">Are you looking to automate your home? 
                     Contact us today to learn more about how our 
                     home automation services can transform your home and
                     make your life easier. We can't wait to work with you!
                 </p>
-                <button class="buttons">Send Us An Email</button>
+                
                 
             </div>
-            
+            <button class="buttons" id="actionbtn">Send Us An Email</button>
+        </div>
+        <div>
+            <img id="landing_image" src="./images/phone.png" alt="">
         </div>
     </section>
     <section id="about">
-        <div style="display: flex;flex-direction: row; ">
-            <div style="width: 60%;">
-                <h2>About Us</h2>
+        <div style="display: flex;flex-direction: row; padding: 40px;">
+            <div style="width: 60%; padding-right: 100px;">
+                <h2 class="title">About Us</h2>
                 <p>
-
+                    The Smart Home Company, is dedicated to making your home more efficient, convenient, and secure with the latest smart home technology. 
+                    We offer a wide range of products and services, from smart thermostats and lighting to security systems and home automation. 
+                </p>
+                <br>
+                <P> 
+                    Our team of experts will work with you to create a personalized solution that fits your specific needs and lifestyle. 
+                    We pride ourselves on our exceptional customer service and commitment to helping you achieve a truly connected home.
+                    Upgrade your home with us today and experience the future of living
+                </p>
+                <h2 class="title" >Our Vission</h2>
+                <p>
+                    Our vision is to be the leading provider of smart home solutions in Kenya, empowering homeowners to live smarter and more connected lives. 
+                </p>
+                
+                <p>
+                    We strive to bring innovative technology and exceptional customer service to every home in the country, improving quality of life and making homes more secure, efficient, and comfortable. 
                 </p>
             </div>
-            <div>
-                <h2>Get In Touch</h2>
-                <form action="message" style="display: flex; flex-direction: column;">
-                    <input type="text" name="name" id="name" placeholder="Your full name">
-                    <input type="email" name="email" id="email" placeholder="Email">
-                    <input type="tel" name="phone" id="phone" placeholder="Phone Number">
-                    <input type="" name="message" id="message" placeholder="Your full name">
-                    <input type="file" name="name" id="name" placeholder="">
+            <div class = "contact_form" style="width: 40%;">
+                <h2 class="title" >Get In Touch</h2>
+                
+                <form action="message" name = "contactForm"  onsubmit = "return(validate());" style="display: flex; flex-direction: column;">
+                    <td>
+                        <p style="color: red; text-align: center;" id = 'name_error'></p>
+                        <input class = "form_input" type="text" name="name" id="name" placeholder="Full Name">  
+                    </td>
+                    <td>
+                        <p style="color: red; text-align: center;" id = 'email_error'></p>
+                        <input class = "form_input" type="email" name="email" id="email" placeholder="Email">
+                    </td>
+                    <td>
+                        <p style="color: red; text-align: center;" id = 'phone_error'></p>
+                        <input class = "form_input" type="tel" name="phone" id="phone" placeholder="Phone Number">
+                    </td>
+                    <td>
+                        <p style="color: red; text-align: center;" id = 'message_error'></p>
+                        <textarea class = "form_input" type="text" name="message" id="message" placeholder="Send us a message"></textarea>
+                    </td>
+                    <td>
+                        <p style="color: red; text-align: center;" id = 'message_error'></p>
+                        <p style="color: green;" id = 'message_success'></p>
+                        <input class="buttons" type = "submit" value = "Send Message" />
+                    </td>
+                    
                 </form>
             </div>
         </div>
     </section>
+    <script>
+        const humberger = document.querySelector(".humberger");
+        const navMenu = document.querySelector(".nav-menu");
 
-    <!-- <img src="./images/The-SmartHome-Company-Logo.png" alt="smarthome company Logo"> -->
+        humberger.addEventListener("click",()=>{
+            humberger.classList.toggle("active");
+            navMenu.classList.toggle("active");
+        } )
+        document.querySelectorAll('.nav-link').forEach(n =>{
+            n.addEventListener("click",()=>{
+            humberger.classList.remove('active ');
+            navMenu.classList.remove('active');
+            })
+        })
+    </script>
+    <script src = "scripts.js" ></script>
 </body>
-
 </html>

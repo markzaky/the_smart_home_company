@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="document.write(4+3)">
+        Try It
+    </button>
+    <form action="test">
+        <input type="text" placeholder="name">
+    </form>
+    <p id="demo">
+    </p>
+    <script>
+        let price1 = 5;
+        let price2 = 10;
+        let total_price = price1 + price2;
+
+        const name = "ram";
+        const name1 = 'hary';
+        const result = `The names are ${name} and ${name1}`
+
+        const number1 = 3;
+        const number2 = 3.23;
+        const number3 = 3e5;
+        console.log(number3);
+
+        let value1 =9007199254855256816549846546865n;
+        const result1 = value1+1n;
+        console.log(result1)
+
+        // const result2 = value1+1;
+        // console.log(result2)
+        const value_checked = true;
+        const value_verrified = false;
+        console.log(value_verrified);
+        let data;
+        console.log(data)
+        let user = {
+            firstName: "john",
+            lastName: "Doe",
+            adm:"19YAD104379"
+        };
+        let id = Symbol("id");
+        user[id] = "19YAD104379";
+        console.log(user.adm)
+
+        console.log(2 !== '2')
+        document.getElementById("demo").innerHTML = result;
+        // console.log("Console")
+    </script>
+</body>
+</html>
