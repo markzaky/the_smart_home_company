@@ -34,6 +34,13 @@ p{
     font-size: 15px;
     color: rgb(41, 41, 41);
 }
+ul{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    font-size: 15px;
+    color: rgb(41, 41, 41);
+    text-align: left;
+}
 /* style for container */
 .container{
     max-width: 1224px;
@@ -188,3 +195,25 @@ section{
     border:0;
     border-bottom: 1px solid rgb(78, 77, 77)
 }
+/* Services Syling */
+#services{
+    /* background-color: aqua; */
+    margin: 20px;
+    display: grid;
+    grid-template-columns: 2 auto auto;
+    column-gap: 00px;
+    grid-auto-rows: max-content;
+    text-align: center;
+}
+#item1 {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    text-align: center;
+  }
+.service{
+    width: 600px;
+  }
+.service_img{
+    width: 600px;
+    border-radius: 10px;
+  }

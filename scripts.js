@@ -34,3 +34,7 @@ function validate() {
         ;
     return( true );
     }
+let service = document.querySelector(".service");
+service.addEventListener('mouseover',(e)=>{
+    // alert("hello")
+})
